@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k4w-LO-mG4" customClass="ImageTextCollectionViewCell" customModule="YonduApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="588" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qrw-IW-PuF">
+                <rect key="frame" x="0.0" y="0.0" width="588" height="320"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kED-an-pI0">
+                        <rect key="frame" x="25" y="25" width="538" height="270"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxm-dH-cIU">
+                                <rect key="frame" x="0.0" y="0.0" width="538" height="220"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="245" verticalHuggingPriority="245" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="745" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="atB-gL-VEK">
+                                        <rect key="frame" x="0.0" y="0.3333333333333286" width="538" height="219.66666666666666"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="jAA-29-gBb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="atB-gL-VEK" firstAttribute="top" secondItem="Zxm-dH-cIU" secondAttribute="top" id="01L-IP-qBC"/>
+                                    <constraint firstAttribute="bottom" secondItem="atB-gL-VEK" secondAttribute="bottom" id="Eou-ck-OwQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="atB-gL-VEK" secondAttribute="trailing" id="Ify-LC-ZUp"/>
+                                    <constraint firstItem="atB-gL-VEK" firstAttribute="leading" secondItem="Zxm-dH-cIU" secondAttribute="leading" id="Mpc-pY-NAu"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muG-uj-aQ7">
+                                <rect key="frame" x="15" y="238" width="508" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Cl2-Pc-d4n">
+                                <rect key="frame" x="250.66666666666669" y="91.666666666666671" width="37" height="37.000000000000014"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zxm-dH-cIU" firstAttribute="top" secondItem="kED-an-pI0" secondAttribute="top" id="3wO-SL-KQc"/>
+                            <constraint firstItem="muG-uj-aQ7" firstAttribute="leading" secondItem="kED-an-pI0" secondAttribute="leading" constant="15.000000000000004" id="9fL-hT-UGM"/>
+                            <constraint firstItem="muG-uj-aQ7" firstAttribute="top" secondItem="Zxm-dH-cIU" secondAttribute="bottom" constant="18" id="9ns-Nw-UOf"/>
+                            <constraint firstAttribute="trailing" secondItem="muG-uj-aQ7" secondAttribute="trailing" constant="15" id="BJy-ig-YhN"/>
+                            <constraint firstItem="Cl2-Pc-d4n" firstAttribute="centerY" secondItem="Zxm-dH-cIU" secondAttribute="centerY" id="Bt9-gs-OPT"/>
+                            <constraint firstItem="Cl2-Pc-d4n" firstAttribute="centerX" secondItem="Zxm-dH-cIU" secondAttribute="centerX" id="VCx-fu-jVq"/>
+                            <constraint firstAttribute="bottom" secondItem="muG-uj-aQ7" secondAttribute="bottom" constant="18" id="ulg-YU-qI5"/>
+                            <constraint firstItem="Zxm-dH-cIU" firstAttribute="leading" secondItem="kED-an-pI0" secondAttribute="leading" id="yys-No-k6U"/>
+                            <constraint firstAttribute="trailing" secondItem="Zxm-dH-cIU" secondAttribute="trailing" id="zDd-Q2-gdW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kED-an-pI0" firstAttribute="leading" secondItem="Qrw-IW-PuF" secondAttribute="leading" constant="25" id="He2-PD-Xj1"/>
+                    <constraint firstAttribute="bottom" secondItem="kED-an-pI0" secondAttribute="bottom" constant="25" id="PbE-Q1-pqm"/>
+                    <constraint firstAttribute="trailing" secondItem="kED-an-pI0" secondAttribute="trailing" constant="25" id="RmB-f0-GvV"/>
+                    <constraint firstItem="kED-an-pI0" firstAttribute="top" secondItem="Qrw-IW-PuF" secondAttribute="top" constant="25" id="Zbe-QD-GlV"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="588" height="364"/>
+            <connections>
+                <outlet property="cardContainerInnerView" destination="Zxm-dH-cIU" id="MNM-yc-LXJ"/>
+                <outlet property="cardContainerView" destination="kED-an-pI0" id="7kl-ky-mKj"/>
+                <outlet property="itemImageView" destination="atB-gL-VEK" id="xHp-ra-veH"/>
+                <outlet property="itemTitleLabel" destination="muG-uj-aQ7" id="2RQ-xh-Eoa"/>
+                <outlet property="progressIndicatorView" destination="Cl2-Pc-d4n" id="Cc8-xm-D80"/>
+            </connections>
+            <point key="canvasLocation" x="219.84732824427479" y="-121.83098591549296"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

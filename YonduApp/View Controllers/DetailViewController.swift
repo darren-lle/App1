@@ -12,17 +12,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemMoreDetailsTextView: UITextView!
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var progressIndicatorView: UIActivityIndicatorView!
-    private var item: Item?
+    
+    private var item: Rewards?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         prepareShareButton()
         displayItemDetails()
+        loading(false)
     }
     
-    func set(_ item: Item?) {
+    func set(_ item: Rewards?) {
         self.item = item
     }
 
@@ -34,18 +37,26 @@ private extension DetailViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(share(sender:)))
     }
     
+    func loading(_ loading: Bool) {
+        UIView.animate(withDuration: 0.5) {[weak self] in
+            self?.view.isUserInteractionEnabled = !loading
+            self?.loadingView.isHidden = !loading
+            loading ? self?.progressIndicatorView.startAnimating() : self?.progressIndicatorView.stopAnimating()
+        }
+    }
+    
     func displayItemDetails() {
         guard let item = item else { return }
         
-        itemTitleLabel.text = item.title
-        itemMoreDetailsTextView.text = item.moreDetails
+        itemTitleLabel.text = item.name
+        itemMoreDetailsTextView.text = item.description
         progressIndicatorView.startAnimating()
         itemImageView.isHidden = true
         
         DispatchQueue.global(qos: .background).async {
             [weak self] in
             
-            if let url = URL(string: item.imageURL),
+            if let url = URL(string: item.image),
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data)  {
                 
@@ -61,17 +72,28 @@ private extension DetailViewController {
 
 extension DetailViewController {
     @objc func share(sender: UIView) {
-        let shareText = "Share this reward"
+        loading(true)
         
         guard let image = itemImageView.image else { return }
         
-        if let myWebsite = URL(string: "http://www.google.com") {
-            let objectsToShare = [shareText, myWebsite, image] as [Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            let shareText = "Share this reward"
+            var activityVC: UIActivityViewController?
             
-            activityVC.popoverPresentationController?.sourceView = sender
-            self.present(activityVC, animated: true, completion: nil)
+            if let myWebsite = URL(string: self?.item?.image ?? "www.google.com") {
+                let objectsToShare = [shareText, myWebsite, image] as [Any]
+                activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            }
             
+            DispatchQueue.main.async {
+                if let activityVC = activityVC {
+                    activityVC.popoverPresentationController?.sourceView = sender
+                    self?.present(activityVC, animated: true, completion: nil)
+                }
+                
+                self?.loading(false)
+            }
         }
     }
+        
 }

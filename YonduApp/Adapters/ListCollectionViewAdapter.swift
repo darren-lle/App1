@@ -12,7 +12,7 @@ class ListCollectionViewAdapter: NSObject {
     private let REUSE_IDENTIFIER = ImageTextCollectionViewCell.className()
     private weak var collectionView: UICollectionView?
     private weak var delegate: ListCollectionViewAdapterDelegate?
-    private var data: [Item]?
+    private var data: [Rewards]?
     
     init(collectionView: UICollectionView, delegate: ListCollectionViewAdapterDelegate) {
         self.delegate = delegate
@@ -21,7 +21,7 @@ class ListCollectionViewAdapter: NSObject {
         prepare(collectionView)
     }
     
-    func set(data: [Item]) {
+    func set(data: [Rewards]) {
         self.data = data
         self.collectionView?.reloadData()
     }
@@ -69,5 +69,5 @@ extension ListCollectionViewAdapter: UICollectionViewDelegateFlowLayout {
 }
 
 protocol ListCollectionViewAdapterDelegate: AnyObject {
-    func didSelect(_ item: Item)
+    func didSelect(_ item: Rewards)
 }

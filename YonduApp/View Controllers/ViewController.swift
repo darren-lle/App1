@@ -19,6 +19,5 @@ class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
-        print("unwindAction")
     }
 }

@@ -13,13 +13,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mobileNumLabel: UILabel!
     @IBOutlet weak var referralLabel: UILabel!
     @IBOutlet weak var listCollectionView: UICollectionView!
+    @IBOutlet weak var progressIndicatorView: UIActivityIndicatorView!
     
+    private var user: User!
     private var adapter: ListCollectionViewAdapter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         prepareTableView()
+        getUserProfile()
+        getRewards()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,29 +42,86 @@ class MainViewController: UIViewController {
                 return
             }
             
-            vc.set(sender as? Item)
+            vc.set(sender as? Rewards)
         }
     }
-
+    
+    func set(_ user: User) {
+        self.user = user
+    }
 }
 
 private extension MainViewController {
     func prepareTableView() {
         adapter = ListCollectionViewAdapter(collectionView: listCollectionView, delegate: self)
+    }
+    
+    func loadRewards(_ rewards: [Rewards]) {
+        adapter?.set(data: rewards)
+    }
+    
+    func loading(_ loading: Bool) {
+        progressIndicatorView.isHidden = !loading
+        loading ? progressIndicatorView.startAnimating() : progressIndicatorView.stopAnimating()
+    }
+    
+    func getUserProfile() {
+        nameLabel.text = nil
+        mobileNumLabel.text = nil
+        referralLabel.text = nil
         
-        var items: [Item] = []
-        
-        for ctr in 0..<5 {
-            items.append(Item(title: "Title \(ctr)", moreDetails: "More Details: \(ctr)", imageURL: "https://fujifilm-x.com/wp-content/uploads/2021/01/gfx100s_sample_04_thum-1.jpg"))
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else { return }
+            
+            UserProfileRequestHandler().profileRequest(for: self.user) { [weak self] user, message in
+                
+                guard let user = user else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self?.displayUserProfile(user)
+                }
+            }
         }
+    }
+    
+    func displayUserProfile(_ user: User) {
+        nameLabel.text = "\(user.firstName) \(user.lastName)"
+        mobileNumLabel.text = user.mobile
+        referralLabel.text = user.referralCode ?? "----"
+    }
+    
+    func getRewards() {
+        loading(true)
         
-        adapter?.set(data: items)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            RewardsListRequestHandler().requestRewards { rewards, message in
+                DispatchQueue.main.async {
+                    self?.loading(false)
+                    
+                    if let rewards = rewards {
+                        self?.loadRewards(rewards)
+                        return
+                    }
+                    
+                    let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Retry", style: .default) { _ in
+                        self?.getRewards()
+                    })
+                    alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+                    
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
     }
 }
 
 extension MainViewController: ListCollectionViewAdapterDelegate {
-    func didSelect(_ item: Item) {
+    func didSelect(_ item: Rewards) {
         performSegue(withIdentifier: "showMoreDetails", sender: item)
     }
+
 }
 

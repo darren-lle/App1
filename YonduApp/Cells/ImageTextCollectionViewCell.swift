@@ -31,15 +31,15 @@ class ImageTextCollectionViewCell: UICollectionViewCell {
         cardContainerView.layer.shadowOpacity = 1
     }
     
-    func display(_ item: Item) {
-        itemTitleLabel.text = item.title
+    func display(_ item: Rewards) {
+        itemTitleLabel.text = item.name
         progressIndicatorView.startAnimating()
         itemImageView.isHidden = true
         
         DispatchQueue.global(qos: .background).async {
             [weak self] in
             
-            if let url = URL(string: item.imageURL),
+            if let url = URL(string: item.image),
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data)  {
                 

@@ -79,16 +79,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Sp-hA-uyD">
                                 <rect key="frame" x="35" y="164" width="323" height="83"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mobile number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qgz-1O-IPt">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-Ch-epS">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter MPIN" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-eR-hPR">
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mobile number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qgz-1O-IPt">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile is required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ht-mZ-dzG">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cvp-O6-lKo">
                                         <rect key="frame" x="0.0" y="49" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter MPIN" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-eR-hPR">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mpin is required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asM-by-fKc">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ntx-T6-e4t">
@@ -121,6 +143,45 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-9M-sjs">
+                                <rect key="frame" x="96.666666666666686" y="369" width="200" height="139"/>
+                                <subviews>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-yB-LBU">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="139"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="648-33-aQQ">
+                                        <rect key="frame" x="15" y="15" width="170" height="109"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hDg-ed-c3j">
+                                                <rect key="frame" x="66.333333333333329" y="0.0" width="37" height="37"/>
+                                                <color key="color" systemColor="systemCyanColor"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="245" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-We-Ahs">
+                                                <rect key="frame" x="19.333333333333329" y="55" width="131.33333333333337" height="54"/>
+                                                <string key="text">Logging In.
+
+Please Wait...</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="648-33-aQQ" secondAttribute="trailing" constant="15" id="11e-dV-Iky"/>
+                                    <constraint firstAttribute="width" constant="200" id="Pii-LJ-cb8"/>
+                                    <constraint firstAttribute="bottom" secondItem="648-33-aQQ" secondAttribute="bottom" constant="15" id="W70-tJ-Mjz"/>
+                                    <constraint firstAttribute="bottom" secondItem="3xQ-yB-LBU" secondAttribute="bottom" id="b3c-8I-DKU"/>
+                                    <constraint firstItem="3xQ-yB-LBU" firstAttribute="top" secondItem="yuL-9M-sjs" secondAttribute="top" id="bC9-8o-kHE"/>
+                                    <constraint firstItem="648-33-aQQ" firstAttribute="top" secondItem="yuL-9M-sjs" secondAttribute="top" constant="15" id="fLf-Nz-SqH"/>
+                                    <constraint firstItem="3xQ-yB-LBU" firstAttribute="leading" secondItem="yuL-9M-sjs" secondAttribute="leading" id="hHP-EM-Pxc"/>
+                                    <constraint firstAttribute="trailing" secondItem="3xQ-yB-LBU" secondAttribute="trailing" id="j1j-Xb-ORi"/>
+                                    <constraint firstItem="648-33-aQQ" firstAttribute="leading" secondItem="yuL-9M-sjs" secondAttribute="leading" constant="15" id="p1s-o7-2dJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dba-jv-vqf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,6 +191,8 @@
                             <constraint firstItem="Dba-jv-vqf" firstAttribute="bottom" secondItem="Ntx-T6-e4t" secondAttribute="bottom" constant="20" id="Ulz-Bk-AQR"/>
                             <constraint firstItem="Ntx-T6-e4t" firstAttribute="leading" secondItem="glW-Gt-oSe" secondAttribute="leading" constant="25" id="aCp-Yh-X3Q"/>
                             <constraint firstItem="3AI-cI-oVm" firstAttribute="top" secondItem="Dba-jv-vqf" secondAttribute="top" constant="20" id="h2Y-BM-357"/>
+                            <constraint firstItem="yuL-9M-sjs" firstAttribute="centerX" secondItem="Dba-jv-vqf" secondAttribute="centerX" id="jNK-Hq-7OZ"/>
+                            <constraint firstItem="yuL-9M-sjs" firstAttribute="centerY" secondItem="Dba-jv-vqf" secondAttribute="centerY" id="ojt-j6-RDl"/>
                             <constraint firstItem="3AI-cI-oVm" firstAttribute="leading" secondItem="Dba-jv-vqf" secondAttribute="leading" constant="25" id="rBr-e1-EiD"/>
                             <constraint firstAttribute="trailing" secondItem="3AI-cI-oVm" secondAttribute="trailing" constant="25" id="rGN-L3-PhD"/>
                             <constraint firstItem="4Sp-hA-uyD" firstAttribute="leading" secondItem="Dba-jv-vqf" secondAttribute="leading" constant="35" id="sdv-3Y-hTu"/>
@@ -138,7 +201,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="bMP-kB-i6f"/>
                     <connections>
-                        <segue destination="Rpz-9c-HCm" kind="presentation" identifier="logintToMain" modalPresentationStyle="fullScreen" id="gYN-de-rX5"/>
+                        <outlet property="loadingView" destination="yuL-9M-sjs" id="0Yi-C2-igh"/>
+                        <outlet property="mobileErrorLabel" destination="5Ht-mZ-dzG" id="Ahf-TR-avx"/>
+                        <outlet property="mobileTextField" destination="Qgz-1O-IPt" id="d23-xR-hHy"/>
+                        <outlet property="mpinErrorLabel" destination="asM-by-fKc" id="zvH-Lg-gMu"/>
+                        <outlet property="mpinTextField" destination="VXi-eR-hPR" id="Bf0-UC-W40"/>
+                        <outlet property="progressIndicatorView" destination="hDg-ed-c3j" id="hVs-DG-yQK"/>
+                        <segue destination="Rpz-9c-HCm" kind="presentation" identifier="loginToMain" modalPresentationStyle="fullScreen" id="gYN-de-rX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRd-yN-IbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,34 +229,89 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c4y-Oe-Jk0">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c4y-Oe-Jk0">
                                 <rect key="frame" x="35" y="164" width="323" height="230"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-9n-vqf">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rkp-Ov-fhm">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-kG-ze5">
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-9n-vqf">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stL-0S-97N">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-1j-L4O">
                                         <rect key="frame" x="0.0" y="49" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mobile number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-DU-RgI">
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-kG-ze5">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-AZ-gEe">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-8O-cZt">
                                         <rect key="frame" x="0.0" y="98" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter MPIN" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-Ej-3VU">
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mobile number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-DU-RgI">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fns-nk-yJX">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="srM-Ql-tGE">
                                         <rect key="frame" x="0.0" y="147" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm MPIN" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WnX-MA-9Hy">
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter MPIN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-Ej-3VU">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mpin is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-TQ-k1p">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ijb-mK-QcS">
                                         <rect key="frame" x="0.0" y="196" width="323" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm MPIN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WnX-MA-9Hy">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mpin does not match" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ews-6T-Smt">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-e1-LLO">
@@ -221,6 +345,45 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-vd-Wce">
+                                <rect key="frame" x="96.666666666666686" y="360.33333333333331" width="200" height="156.66666666666669"/>
+                                <subviews>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-aX-4TH">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="156.66666666666666"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZfE-nN-pwG">
+                                        <rect key="frame" x="15" y="15.000000000000007" width="170" height="126.66666666666669"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EGa-wZ-pUz">
+                                                <rect key="frame" x="66.333333333333329" y="0.0" width="37" height="37"/>
+                                                <color key="color" systemColor="systemCyanColor"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="245" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tp-f2-tyf">
+                                                <rect key="frame" x="9" y="55.000000000000007" width="152" height="71.666666666666686"/>
+                                                <string key="text">You are now being registered.
+
+Please Wait...</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EOA-iw-rIF"/>
+                                    <constraint firstAttribute="bottom" secondItem="BMf-aX-4TH" secondAttribute="bottom" id="MyO-dg-rbH"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZfE-nN-pwG" secondAttribute="trailing" constant="15" id="ORe-h6-roc"/>
+                                    <constraint firstItem="ZfE-nN-pwG" firstAttribute="leading" secondItem="FL7-vd-Wce" secondAttribute="leading" constant="15" id="QfQ-fO-LI1"/>
+                                    <constraint firstItem="BMf-aX-4TH" firstAttribute="top" secondItem="FL7-vd-Wce" secondAttribute="top" id="jwZ-fn-Hrc"/>
+                                    <constraint firstItem="BMf-aX-4TH" firstAttribute="leading" secondItem="FL7-vd-Wce" secondAttribute="leading" id="oaB-03-Mol"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZfE-nN-pwG" secondAttribute="bottom" constant="15" id="q8U-6u-sGm"/>
+                                    <constraint firstItem="ZfE-nN-pwG" firstAttribute="top" secondItem="FL7-vd-Wce" secondAttribute="top" constant="15" id="uTV-0T-UbR"/>
+                                    <constraint firstAttribute="trailing" secondItem="BMf-aX-4TH" secondAttribute="trailing" id="ylB-nN-nYn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0fe-Lx-XYr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -232,12 +395,26 @@
                             <constraint firstItem="0fe-Lx-XYr" firstAttribute="trailing" secondItem="4Gt-mS-5Pl" secondAttribute="trailing" constant="25" id="Gy8-rS-X1a"/>
                             <constraint firstItem="4Gt-mS-5Pl" firstAttribute="leading" secondItem="0fe-Lx-XYr" secondAttribute="leading" constant="25" id="Kam-YD-7pZ"/>
                             <constraint firstItem="0fe-Lx-XYr" firstAttribute="trailing" secondItem="c4y-Oe-Jk0" secondAttribute="trailing" constant="35" id="Llz-wB-SxA"/>
+                            <constraint firstItem="FL7-vd-Wce" firstAttribute="centerY" secondItem="0fe-Lx-XYr" secondAttribute="centerY" id="MMN-2N-lZS"/>
                             <constraint firstItem="4Gt-mS-5Pl" firstAttribute="top" secondItem="0fe-Lx-XYr" secondAttribute="top" constant="20" id="XU6-uc-5Q9"/>
                             <constraint firstItem="ScL-e1-LLO" firstAttribute="leading" secondItem="0fe-Lx-XYr" secondAttribute="leading" constant="25" id="iwg-kT-Tgf"/>
+                            <constraint firstItem="FL7-vd-Wce" firstAttribute="centerX" secondItem="0fe-Lx-XYr" secondAttribute="centerX" id="xWw-eJ-u3n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ppB-y7-2Ct"/>
                     <connections>
+                        <outlet property="confirmMpinTextField" destination="WnX-MA-9Hy" id="I6d-Vf-bmb"/>
+                        <outlet property="confirmMpinerrorLabel" destination="Ews-6T-Smt" id="aiq-bi-RGb"/>
+                        <outlet property="firstNameErrorLabel" destination="stL-0S-97N" id="VZ9-BQ-8Mr"/>
+                        <outlet property="firstNameTextField" destination="f3N-9n-vqf" id="8E3-gs-2Yj"/>
+                        <outlet property="lastNameErrorLabel" destination="5rc-AZ-gEe" id="jl1-xa-HJb"/>
+                        <outlet property="lastNameTextField" destination="X0U-kG-ze5" id="Ui9-Na-6H5"/>
+                        <outlet property="loadingView" destination="FL7-vd-Wce" id="KUH-C0-54J"/>
+                        <outlet property="mobileErrorLabel" destination="Fns-nk-yJX" id="ERm-0Z-3OG"/>
+                        <outlet property="mobileTextField" destination="VVM-DU-RgI" id="JGF-CH-tNF"/>
+                        <outlet property="mpinErrorLabel" destination="jeq-TQ-k1p" id="1dJ-at-fUK"/>
+                        <outlet property="mpinTextField" destination="ue9-Ej-3VU" id="ijU-ZT-toH"/>
+                        <outlet property="progressIndicatorView" destination="EGa-wZ-pUz" id="A7T-4e-ZRz"/>
                         <segue destination="11d-K2-Njz" kind="unwind" identifier="unwindRegisterVC" unwindAction="unwindActionWithUnwindSegue:" id="zJj-tt-ftj"/>
                         <segue destination="Rpz-9c-HCm" kind="presentation" identifier="registerToMain" modalPresentationStyle="fullScreen" id="ooM-Ug-jHX"/>
                     </connections>
@@ -245,7 +422,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDD-kl-F7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="11d-K2-Njz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="504"/>
+            <point key="canvasLocation" x="1209.9236641221373" y="503.52112676056339"/>
         </scene>
         <!--Main-->
         <scene sceneID="YcG-BO-Gnd">
@@ -257,7 +434,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ooM-Ug-jHX"/>
+        <segue reference="gYN-de-rX5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
@@ -265,6 +442,12 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
